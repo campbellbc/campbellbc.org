@@ -1,0 +1,2 @@
+cp $OPENSHIFT_REPO_DIR/.openshift/wp-config.php $OPENSHIFT_REPO_DIR/php/wp-config.php
+
