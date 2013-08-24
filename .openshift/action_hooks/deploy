@@ -9,6 +9,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/uploads ]; then
 fi
 
 ln -sf $OPENSHIFT_DATA_DIR/uploads $OPENSHIFT_REPO_DIR/php/wp-content/
+cp $OPENSHIFT_REPO_DIR/.openshift/wp-config.php $OPENSHIFT_REPO_DIR/php/wp-config.php
 
 set -e
 
