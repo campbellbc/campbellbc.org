@@ -8,6 +8,16 @@ if [ ! -d $OPENSHIFT_DATA_DIR/uploads ]; then
     mkdir $OPENSHIFT_DATA_DIR/uploads
 fi
 
+if [ ! -d $OPENSHIFT_DATA_DIR/plugins ]; then
+    cp -r $OPENSHIFT_REPO_DIR/.openshift/plugins $OPENSHIFT_DATA_DIR/plugins
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/themes ]; then
+    cp -r $OPENSHIFT_REPO_DIR/.openshift/themes $OPENSHIFT_DATA_DIR/themes
+fi
+
+ln -sf $OPENSHIFT_DATA_DIR/plugins $OPENSHIFT_REPO_DIR/php/wp-content/
+ln -sf $OPENSHIFT_DATA_DIR/themes $OPENSHIFT_REPO_DIR/php/wp-content/
 ln -sf $OPENSHIFT_DATA_DIR/uploads $OPENSHIFT_REPO_DIR/php/wp-content/
 cp $OPENSHIFT_REPO_DIR/.openshift/wp-config.php $OPENSHIFT_REPO_DIR/php/wp-config.php
 
